@@ -10,7 +10,7 @@ ai-hardware-project-6501-group7
 
 ## Project Title:
 
-Low-Bit Quantization Optimization Experiment and Extending CNN Models on the Hive Platform
+EyerissF Low-Bit Quantization Optimization Experiment and Extending CNN Models on the Hive Platform
 
 ## Project Description:
 (Provide a short description of the problem you're addressing)
