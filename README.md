@@ -5,7 +5,7 @@ ai-hardware-project-6501-group7
 
 ## Team Members:
 - Feilian Dai
-- Student 2
+- Ezeuko Emmanuel
 - Student 3
 
 ## Project Title:
