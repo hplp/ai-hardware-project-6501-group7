@@ -10,16 +10,19 @@ ai-hardware-project-6501-group7
 
 ## Project Title:
 
-EyerissF Low-Bit Quantization Optimization Experiment and Extending CNN Models on the Hive Platform
+Neural network training using Neuromorphic Architecture (Spiral Neural Networks)
 
 ## Project Description:
 (Provide a short description of the problem you're addressing)
 
-For low-bit quantization optimization experiment, Implement and test quantized convolutional neural networks 
-with different bit widths (e.g., int8, int4, int2) to evaluate their performance on the Eyeriss simulator.
-Investigate the trade-offs between power consumption, computation speed, and accuracy of quantized models on Eyeriss and demonstrate the impact of quantization on hardware efficiency, also evaluate performance trade-offs, and determine optimal bit-widths.
-For the Hive Platform, it can implement and test additional CNN architectures, such as ResNet or MobileNet, 
-to evaluate the performance and inference speed of different models to see how well EyerissF can support various deep learning models.
+Spiking neural networks (SNNs) are expected to
+be part of the future AI portfolio, with heavy investment from
+industry and government, e.g. Loihi.While
+Artificial Neural Network (ANN) architectures have taken large
+strides, few works have targeted SNN hardware efficiency. Our
+analysis of SNN baselines shows that at modest spike rates,
+SNN implementations exhibit significantly lower efficiency than
+accelerators for ANNs. 
 
 ## Key Objectives:
 - Evaluate the trade-offs of low-bit quantization on EyerissF in terms of power, speed, and accuracy.
@@ -28,9 +31,9 @@ to evaluate the performance and inference speed of different models to see how w
 
 ## Technology Stack:
 (List the hardware platform, software tools, language(s), etc. you plan to use)
-- Platform: Eyeriss Chip simulator
-- Software tools: PyTorch, TensorFlow
-- language: Python
+- Google collab
+- Python
+- Jupyter Notebook
 
 ## Expected Outcomes:
 (Describe what you expect to deliver at the end of the project)
