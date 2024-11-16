@@ -25,9 +25,11 @@ SNN implementations exhibit significantly lower efficiency than
 accelerators for ANNs. 
 
 ## Key Objectives:
-- Evaluate the trade-offs of low-bit quantization on EyerissF in terms of power, speed, and accuracy.
-- Implement uniform post-training quantization on EyerissF to find the optimal bit-width for efficient inference.
-- Test additional CNN architectures (e.g., ResNet, MobileNet) on EyerissF to assess performance and compatibility.
+•	 Clarify our main goals for using neuromorphic computing Literature Review: Research similar work in neuromorphic architecture, and Spiking Neural Networks (SNNs) to understand current approaches, datasets, and tools. 
+•	Select Tools and Libraries: Decide on simulation software (e.g., BindsNET, NEST, or SpiNNaker simulator) and any supporting libraries (e.g., PyTorch) based on compatibility and ease of use.
+•	SNN Model Selection: Choose a suitable SNN architecture (e.g., convolutional SNN, recurrent SNN) for gesture recognition.
+•	Model Training: Use a framework like BindsNET, which allows for integrating SNN models with conventional neural network training methods.
+•	Optimization: Experiment with different SNN parameters (e.g., neuron types, spike thresholds) to optimize for real-time performance.
 
 ## Technology Stack:
 (List the hardware platform, software tools, language(s), etc. you plan to use)
@@ -36,9 +38,7 @@ accelerators for ANNs.
 - Jupyter Notebook
 
 ## Expected Outcomes:
-(Describe what you expect to deliver at the end of the project)
-- We expect to successfully evaluate the trade-offs of low-bit quantization on EyerissF, and find the optimal bit-width for efficient inference.
-- We expect to implementation and testing of additional CNN architectures, on the Hive platform integrated with EyerissF, and do evaluation.
+Analyze how different spike-coding schemes, network parameters, and simulator settings affect performance.
 
 ## Timeline:
 (Provide a rough timeline or milestones for the project)
