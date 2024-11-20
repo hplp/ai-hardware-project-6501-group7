@@ -10,7 +10,7 @@ ai-hardware-project-6501-group7
 
 ## Project Title:
 
-Neural network training using Neuromorphic Architecture (Spiral Neural Networks)
+Age based recommendation system using Brainchip Akida (Neuromorphic architecture)
 
 ## Project Description:
 (Provide a short description of the problem you're addressing)
