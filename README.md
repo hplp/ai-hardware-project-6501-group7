@@ -4,7 +4,6 @@
 ai-hardware-project-6501-group7
 
 ## Team Members:
-- Feilian Dai
 - Ezeuko Emmanuel
 - Jazzmin Poitier
 
