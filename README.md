@@ -18,11 +18,35 @@ The system uses age estimation from facial images as a key input to recommend pe
 content, products, or services tailored to specific age groups.
 
 ## Key Objectives:
-•	 Clarify our main goals for using neuromorphic computing Literature Review: Research similar work in neuromorphic architecture, and Spiking Neural Networks (SNNs) to understand current approaches, datasets, and tools. 
-•	Select Tools and Libraries: Decide on simulation software (e.g., BindsNET, NEST, or SpiNNaker simulator) and any supporting libraries (e.g., PyTorch) based on compatibility and ease of use.
-•	SNN Model Selection: Choose a suitable SNN architecture (e.g., convolutional SNN, recurrent SNN) for gesture recognition.
-•	Model Training: Use a framework like BindsNET, which allows for integrating SNN models with conventional neural network training methods.
-•	Optimization: Experiment with different SNN parameters (e.g., neuron types, spike thresholds) to optimize for real-time performance.
+Accurate Age Prediction
+
+    Develop a reliable age estimation model using facial images.
+    Ensure the model achieves high accuracy with low Mean Absolute Error (MAE) across different age groups, considering diversity in demographics (gender, ethnicity, etc.).
+
+Energy-Efficient Inference
+
+    Leverage the Brainchip Akida neuromorphic architecture for low-latency, low-power inference.
+    Demonstrate the Akida model’s comparable performance to traditional models while optimizing for edge devices.
+
+Seamless Model Conversion
+
+    Implement quantization-aware training (QAT) and convert the trained model to Akida-compatible format using the cnn2snn library.
+    Validate the performance of the Akida model in comparison to the original Keras model.
+
+Integration into a Recommendation System
+
+    Use age predictions to design an age-based recommendation system that can suggest tailored products, content, or services.
+    Create recommendation rules or algorithms that adapt dynamically to user-specific age ranges.
+
+Real-Time Edge Deployment
+
+    Deploy the solution on an edge device, demonstrating real-time age prediction and recommendation generation.
+    Showcase the advantages of Akida’s energy efficiency and speed in resource-constrained environments.
+
+Scalability and Adaptability
+
+    Design the system to scale across diverse datasets, enabling the integration of additional demographic or contextual data for enhanced personalization.
+    Adapt the recommendation system to various industries, such as healthcare, retail, or entertainment.
 
 ## Technology Stack:
 (List the hardware platform, software tools, language(s), etc. you plan to use)
