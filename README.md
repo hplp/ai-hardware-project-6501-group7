@@ -55,15 +55,41 @@ Scalability and Adaptability
 - Jupyter Notebook
 
 ## Expected Outcomes:
-Analyze how different spike-coding schemes, network parameters, and simulator settings affect performance.
+Accurate and Robust Age Estimation System
 
-## Timeline:
-(Provide a rough timeline or milestones for the project)
-- Week 1 (11/4/2024 - 11/10/2024): Proposal and Presentation
-- Week 2 (11/11/2024 - 11/17/2024): Low-Bit Quantization Optimization Experiment
-- Week 3 (11/18/2024 - 11/24/2024): Low-Bit Quantization Optimization Experiment
-- Week 4 (11/25/2024 - 12/01/2024): Extending CNN Models on the Hive Platform
-- Week 5 (12/02/2024 - 12/08/2024): Extending CNN Models on the Hive Platform
+    A trained age estimation model capable of predicting ages from facial images with high accuracy, validated using metrics like Mean Absolute Error (MAE).
+    The system should perform well across diverse demographic groups (age, gender, ethnicity) present in the UTKFace dataset.
+
+Efficient Neuromorphic Inference with Akida
+
+    A fully functional age estimation model converted to the Brainchip Akida neuromorphic architecture.
+    Demonstration of low power consumption, low latency, and comparable or better performance compared to traditional AI models.
+
+Age-Based Recommendation System
+
+    A prototype recommendation engine that dynamically suggests personalized content, services, or products based on predicted age. Examples:
+        Healthcare: Suggestions for age-appropriate vitamins or check-ups.
+        Retail: Product recommendations for kids, teens, adults, or seniors.
+        Entertainment: Customized movie or music suggestions by age group.
+
+Real-Time Deployment on Edge Devices
+
+    A deployed system capable of performing real-time age predictions and recommendations on edge devices, demonstrating the practicality of Akida for real-world applications.
+    Example: A kiosk, tablet, or embedded system showcasing the functionality.
+
+Energy Efficiency and Scalability
+
+    Validation of Akida’s energy-efficient performance, making the solution ideal for battery-operated or IoT devices.
+    A scalable framework that allows integration of additional features like gender or emotion recognition to enhance recommendations.
+
+Improved User Experience
+
+    The recommendation system should enhance user satisfaction by delivering highly relevant, personalized suggestions.
+    Applications spanning industries such as retail, healthcare, entertainment, and education.
+
+Showcase of Neuromorphic Benefits
+
+    Demonstrate the practical advantages of Akida’s neuromorphic architecture, including reduced hardware costs, increased inference speed, and suitability for real-time edge AI applications.
 
 Introduction
 
