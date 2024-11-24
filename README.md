@@ -12,16 +12,10 @@ ai-hardware-project-6501-group7
 Age based recommendation system using Brainchip Akida (Neuromorphic architecture)
 
 ## Project Description:
-(Provide a short description of the problem you're addressing)
-
-Spiking neural networks (SNNs) are expected to
-be part of the future AI portfolio, with heavy investment from
-industry and government, e.g. Loihi.While
-Artificial Neural Network (ANN) architectures have taken large
-strides, few works have targeted SNN hardware efficiency. Our
-analysis of SNN baselines shows that at modest spike rates,
-SNN implementations exhibit significantly lower efficiency than
-accelerators for ANNs. 
+This project aims to develop an AI-powered age-based recommendation system leveraging Brainchip Akida, 
+a neuromorphic processor designed for energy-efficient and hardware-optimized inference. 
+The system uses age estimation from facial images as a key input to recommend personalized 
+content, products, or services tailored to specific age groups.
 
 ## Key Objectives:
 •	 Clarify our main goals for using neuromorphic computing Literature Review: Research similar work in neuromorphic architecture, and Spiking Neural Networks (SNNs) to understand current approaches, datasets, and tools. 
