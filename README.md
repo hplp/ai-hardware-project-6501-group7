@@ -49,10 +49,11 @@ Scalability and Adaptability
     Adapt the recommendation system to various industries, such as healthcare, retail, or entertainment.
 
 ## Technology Stack:
-(List the hardware platform, software tools, language(s), etc. you plan to use)
-- Google collab
-- Python
-- Jupyter Notebook
+1. Programming language -> python
+2. OpenCv for real time image capture
+3. UTKFace dataset, akida_models, cnn2snn
+4. Keras, tensorflow
+5. matplotlib, numpy
 
 ## Expected Outcomes:
 Accurate and Robust Age Estimation System
