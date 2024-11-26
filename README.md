@@ -126,7 +126,29 @@ In this project, a pre-trained VGG-based model is first evaluated in its native 
 
 By assessing the performance of both the Keras and Akida models in terms of mean absolute error (MAE) and their ability to generalize to unseen data, this project aims to provide insights into the viability of neuromorphic computing for real-world edge AI applications. The additional evaluation of predictions on custom images further demonstrates the practical usability of these models in various scenarios.
 
+Key Steps in the Code:
 
+    Dataset Loading:
+        load_data function loads the training and testing data (e.g., images and corresponding ages).
+
+    Keras Model Evaluation:
+        Downloads and loads a pre-trained VGG model (vgg_utk_face.h5).
+        Evaluates its performance on the test set using Mean Absolute Error (MAE).
+
+    Quantized Keras Model Evaluation:
+        Loads a quantized version of the VGG model from the Akida models library.
+        Evaluates its performance on the test set.
+
+    Akida Model Conversion and Evaluation:
+        Converts the quantized Keras model to an Akida-compatible model using cnn2snn.convert.
+        Predicts using the Akida model and compares its performance (MAE) with the original Keras model.
+
+    Age Prediction for a Custom Image:
+        Loads a custom image (img.png), preprocesses it to fit the input dimensions of the models, and predicts the age using both the Keras and Akida models.
+        Displays the image alongside predictions.
+
+    Single Test Image Visualization:
+        Selects a random test image from the dataset, visualizes it, and compares predictions with the actual age.
 
 
 
