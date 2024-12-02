@@ -166,4 +166,6 @@ we also trained both the native Keras and quantized Keras models with the learni
 This approach optimizes the training process, potentially improving model performance and
  convergence speed.
 
-2. 
+2.  Grid search for hyperparameter optimization: this can significantly improve the model's 
+performance by systematically exploring the hyperparameter space such as such as 
+ learning rate, batch size, and number of epochs.
