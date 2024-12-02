@@ -151,4 +151,19 @@ Key Steps in the Code:
         Selects a random test image from the dataset, visualizes it, and compares predictions with the actual age.
 
 
+Contributions
 
+1. Some of our contributions involves implementing a learning rate schedule using a callback and 
+integrating it into the training process for both the Keras and quantized Keras models.
+
+here we added a learning_rate_schedule function to dynamically adjust the learning rate 
+during training.Integrated the LearningRateScheduler callback into the fit methods of both models.
+we also trained both the native Keras and quantized Keras models with the learning rate 
+        optimization to improve convergence and stability.
+        Ensured that the learning rate adjustment does not affect the Akida conversion 
+        and evaluation process.
+
+This approach optimizes the training process, potentially improving model performance and
+ convergence speed.
+
+2. 
