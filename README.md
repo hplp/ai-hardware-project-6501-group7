@@ -97,7 +97,7 @@ Showcase of Neuromorphic Benefits
 
 
 
-##Introduction
+## Introduction
 
 The rapid advancements in artificial intelligence (AI) and machine learning (ML) have enabled significant progress in computer vision, particularly in tasks involving facial analysis. Age estimation from facial images is one such task that has found applications in diverse fields such as security, healthcare, retail, and entertainment. Accurate age prediction models can support applications like targeted marketing, age-appropriate content recommendation, and assistive technologies in healthcare for the early detection of age-related conditions. However, deploying such solutions at scale, particularly on edge devices, requires overcoming challenges related to computational efficiency, power consumption, and latency.
 
@@ -116,7 +116,7 @@ The Akida architecture offers a unique approach to implementing Spiking Neural N
 By leveraging Akida's strengths, this project investigates the trade-offs between accuracy, efficiency, and practical deployment capabilities in resource-constrained environments. The findings aim to provide insights into how neuromorphic computing can complement traditional AI techniques, particularly for tasks like age prediction, where real-time performance and low-power consumption are critical.
 
 
-##Background
+## Background
 
 Age prediction using facial images is a challenging task due to the high variability in facial features caused by factors such as ethnicity, lifestyle, lighting conditions, and image quality. Deep learning models, particularly convolutional neural networks (CNNs), have been successful in learning the complex mappings between facial features and age labels. However, deploying such models on edge devices often requires balancing accuracy with computational efficiency and power consumption.
 
@@ -151,7 +151,7 @@ By assessing the performance of both the Keras and Akida models in terms of mean
         Selects a random test image from the dataset, visualizes it, and compares predictions with the actual age.
 
 
-##Contributions
+## Contributions
 
 1. Some of our contributions involves implementing a learning rate schedule using a callback and 
 integrating it into the training process for both the Keras and quantized Keras models.
