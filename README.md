@@ -116,6 +116,9 @@ The Akida architecture offers a unique approach to implementing Spiking Neural N
 By leveraging Akida's strengths, this project investigates the trade-offs between accuracy, efficiency, and practical deployment capabilities in resource-constrained environments. The findings aim to provide insights into how neuromorphic computing can complement traditional AI techniques, particularly for tasks like age prediction, where real-time performance and low-power consumption are critical.
 
 
+
+
+
 ## Background
 
 Age prediction using facial images is a challenging task due to the high variability in facial features caused by factors such as ethnicity, lifestyle, lighting conditions, and image quality. Deep learning models, particularly convolutional neural networks (CNNs), have been successful in learning the complex mappings between facial features and age labels. However, deploying such models on edge devices often requires balancing accuracy with computational efficiency and power consumption.
@@ -149,6 +152,9 @@ By assessing the performance of both the Keras and Akida models in terms of mean
 
     Single Test Image Visualization:
         Selects a random test image from the dataset, visualizes it, and compares predictions with the actual age.
+
+
+
 
 
 ## Contributions
@@ -193,4 +199,50 @@ Benefits:
     Enhanced Performance: Grid search ensures the best hyperparameters are used for the augmented dataset.
     End-to-End Optimization: Combines hyperparameter tuning and data augmentation seamlessly.
 
-4. 
+4. Optimizng for edge deployment using quantization: Optimizing the code for edge deployment involves focusing on efficiency, particularly through model quantization.
+    Quantization reduces the precision of weights and activations, enabling faster inference and reduced power consumption without significantly compromising accuracy.
+    Here's how the code is modified for edge deployment using quantization
+       Quantized Keras Model:
+        Used a pre-trained quantized model (vgg_utk_face_pretrained) with 4-bit weights and activations to reduce computational overhead.
+
+    Conversion to Akida Model:
+        The cnn2snn.convert() function converts the quantized Keras model into an Akida model suitable for edge hardware. Akida models operate efficiently with low precision (8-bit or lower).
+
+    Reduced Input Precision:
+        Converted input images to uint8 format for compatibility with the Akida model, further optimizing memory usage and inference time.
+
+    Lightweight Optimizer:
+        Chose the Adam optimizer with a small learning rate for fine-tuning to balance convergence and stability.
+
+    Data Augmentation:
+        Applied data augmentation to improve the model’s ability to generalize, which is critical for real-world scenarios encountered during edge deployment.
+
+    Edge-Friendly Architecture:
+        Used a quantized VGG-inspired architecture, which is simpler and faster for inference on resource-constrained edge devices.
+
+Benefits of These Changes:
+
+    Memory Efficiency: Quantization and uint8 inputs drastically reduce memory usage.
+    Faster Inference: Akida models are optimized for low-power, real-time edge devices.
+    Scalability: The approach can be easily adapted to different edge hardware platforms.
+    Real-World Robustness: Data augmentation ensures the model generalizes well across diverse scenarios.
+5. Pruning: this is a technique that reduces the size of a neural network by removing unnecessary weights, leading to smaller models with reduced inference latency and memory usage.
+       Pruning the Quantized Keras Model:
+        Used prune_low_magnitude from TensorFlow Model Optimization Toolkit to prune weights with low magnitude.
+        Applied constant sparsity with 50% sparsity (half of the weights are set to zero).
+
+    Stripping Pruning Wrappers:
+        After training, used strip_pruning to remove pruning-specific wrappers and prepare the model for conversion and deployment.
+
+    Quantization-Aware Pruning:
+        Pruning was applied to the already quantized model to ensure compatibility with edge deployment requirements.
+
+    Edge Deployment with Akida:
+        Converted the pruned model to the Akida format for efficient inference on edge devices.
+
+Benefits of Pruning for Edge Deployment:
+
+    Reduced Model Size: Pruning eliminates redundant weights, reducing the model's memory footprint.
+    Improved Inference Speed: Sparse models can often be processed more quickly on specialized hardware.
+    Lower Power Consumption: Smaller models consume less power, which is critical for edge devices.
+    Maintained Accuracy: Pruning retains most of the model's accuracy while significantly optimizing resource usage.
