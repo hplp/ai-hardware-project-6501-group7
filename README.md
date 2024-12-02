@@ -97,7 +97,7 @@ Showcase of Neuromorphic Benefits
 
 
 
-Introduction
+##Introduction
 
 The rapid advancements in artificial intelligence (AI) and machine learning (ML) have enabled significant progress in computer vision, particularly in tasks involving facial analysis. Age estimation from facial images is one such task that has found applications in diverse fields such as security, healthcare, retail, and entertainment. Accurate age prediction models can support applications like targeted marketing, age-appropriate content recommendation, and assistive technologies in healthcare for the early detection of age-related conditions. However, deploying such solutions at scale, particularly on edge devices, requires overcoming challenges related to computational efficiency, power consumption, and latency.
 
@@ -116,7 +116,7 @@ The Akida architecture offers a unique approach to implementing Spiking Neural N
 By leveraging Akida's strengths, this project investigates the trade-offs between accuracy, efficiency, and practical deployment capabilities in resource-constrained environments. The findings aim to provide insights into how neuromorphic computing can complement traditional AI techniques, particularly for tasks like age prediction, where real-time performance and low-power consumption are critical.
 
 
-Background
+##Background
 
 Age prediction using facial images is a challenging task due to the high variability in facial features caused by factors such as ethnicity, lifestyle, lighting conditions, and image quality. Deep learning models, particularly convolutional neural networks (CNNs), have been successful in learning the complex mappings between facial features and age labels. However, deploying such models on edge devices often requires balancing accuracy with computational efficiency and power consumption.
 
@@ -126,7 +126,7 @@ In this project, a pre-trained VGG-based model is first evaluated in its native 
 
 By assessing the performance of both the Keras and Akida models in terms of mean absolute error (MAE) and their ability to generalize to unseen data, this project aims to provide insights into the viability of neuromorphic computing for real-world edge AI applications. The additional evaluation of predictions on custom images further demonstrates the practical usability of these models in various scenarios.
 
-Key Steps in the Code:
+##Key Steps in the Code:
 
     Dataset Loading:
         load_data function loads the training and testing data (e.g., images and corresponding ages).
@@ -151,7 +151,7 @@ Key Steps in the Code:
         Selects a random test image from the dataset, visualizes it, and compares predictions with the actual age.
 
 
-Contributions
+##Contributions
 
 1. Some of our contributions involves implementing a learning rate schedule using a callback and 
 integrating it into the training process for both the Keras and quantized Keras models.
@@ -169,3 +169,28 @@ This approach optimizes the training process, potentially improving model perfor
 2.  Grid search for hyperparameter optimization: this can significantly improve the model's 
 performance by systematically exploring the hyperparameter space such as such as 
  learning rate, batch size, and number of epochs.
+
+3. Incorporating data augmentation can significantly enhance the model's robustness by exposing it to varied transformations of the training data
+          Added ImageDataGenerator with:
+            Rotation: Up to 20 degrees.
+            Horizontal Flipping: Random flips.
+            Brightness Adjustment: Between 80% to 120% of the original brightness.
+            Zoom: Random zoom up to 20%.
+        Applied the data augmentation to the training data.
+
+    Grid Search with Augmentation:
+        Integrated the ImageDataGenerator into the grid search using the .flow() method for on-the-fly data generation and augmentation during training.
+
+    Validation with Augmented Data:
+        Used augmented training data for both the native Keras and quantized Keras models.
+
+    Robustness:
+        Enhanced the model's generalization ability by training it on augmented data, ensuring better performance on unseen data.
+
+Benefits:
+
+    Increased Model Robustness: Augmented data helps the model generalize better.
+    Enhanced Performance: Grid search ensures the best hyperparameters are used for the augmented dataset.
+    End-to-End Optimization: Combines hyperparameter tuning and data augmentation seamlessly.
+
+4. 
