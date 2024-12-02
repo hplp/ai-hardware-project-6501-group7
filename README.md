@@ -125,6 +125,9 @@ The UTKFace dataset, with diverse facial images labeled by age, gender, and ethn
 
 The study compares the performance of Keras and Akida models in terms of mean absolute error (MAE) and generalization to unseen data. By also testing predictions on custom images, the project explores the practical viability of neuromorphic computing for real-world edge AI applications, emphasizing trade-offs between accuracy and efficiency.
 
+
+
+
 ##  Key Steps in the Code:
 
     Dataset Loading:
@@ -148,6 +151,69 @@ The study compares the performance of Keras and Akida models in terms of mean ab
 
     Single Test Image Visualization:
         Selects a random test image from the dataset, visualizes it, and compares predictions with the actual age.
+
+
+
+
+
+
+
+## Methodology
+This project demonstrates the deployment of a facial age estimation system by leveraging deep learning and neuromorphic computing. Below is a step-by-step explanation of how the code works:
+1. Data Loading
+
+The code begins by importing the UTKFace dataset, which contains labeled facial images for tasks like age estimation.
+
+    The dataset is loaded using load_data, splitting it into training (x_train, y_train) and testing (x_test, y_test) sets.
+    For Akida compatibility, test images are converted to uint8 format to align with the requirements of event-driven neuromorphic computation.
+
+2. Baseline Model: Native Keras
+
+A pre-trained VGG-based model serves as the baseline:
+
+    The VGG model is a simplified version of the original VGGNet, featuring convolutional and pooling layers followed by dense layers for regression.
+    The model is loaded using TensorFlow/Keras and compiled with the Adam optimizer and Mean Absolute Error (MAE) as the loss function.
+    The model's performance is evaluated on the test set, providing an initial MAE score as a benchmark for comparison.
+
+3. Quantized Keras Model
+
+To optimize the baseline model for edge deployment:
+
+    A pre-trained quantized Keras model is loaded. This model uses 4-bit weights and activations to reduce memory and computational requirements.
+    After compiling the quantized model, its MAE is evaluated on the test set, demonstrating the trade-off between reduced precision and accuracy.
+
+4. Akida Conversion
+
+The quantized model is converted to an Akida-compatible format using the cnn2snn library:
+
+    The Akida model processes input data through spike-based neuromorphic principles, achieving ultra-low-power performance.
+    The Akida model's MAE is computed and compared to the baseline and quantized Keras models, ensuring performance consistency.
+
+5. Testing on Custom Images
+
+The code demonstrates practical usability by estimating the age of a custom image:
+
+    The image is preprocessed to match the input requirements of both Keras and Akida models.
+    Predictions from both models are compared, showcasing their capabilities and generalization.
+
+6. Learning Rate Optimization
+
+The code includes a learning rate scheduler to enhance model training:
+
+    A custom lr_schedule function dynamically adjusts the learning rate based on the training epoch.
+    This ensures efficient convergence by applying higher learning rates initially and reducing them as training progresses.
+
+7. Akida Advantages
+
+The Akida model highlights the following benefits:
+
+    Energy Efficiency: Neuromorphic processing enables real-time inference with minimal power consumption, ideal for edge devices.
+    Hardware Optimization: The Akida platform is tailored for neuromorphic hardware, leveraging event-driven computation.
+    Comparable Accuracy: The model achieves similar performance to traditional methods while being more resource-efficient.
+
+By combining the VGG architecture, quantization techniques, and neuromorphic computing, the code effectively balances accuracy, efficiency, and real-world deployment potential, making it a suitable solution for edge AI applications like age prediction.
+
+
 
 
 
