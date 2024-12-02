@@ -160,6 +160,34 @@ The study compares the performance of Keras and Akida models in terms of mean ab
 
 ## Methodology
 This project demonstrates the deployment of a facial age estimation system by leveraging deep learning and neuromorphic computing. Below is a step-by-step explanation of how the code works:
+we start with the image capture then before image processing (video.py):
+
+The code captures live video from the default camera and records it to a file named output.mp4 while displaying the video feed in a window. Here's a summary of its functionality:
+
+    Camera Setup:
+        Opens the default camera using OpenCV's cv2.VideoCapture.
+        Retrieves the default frame dimensions (frame_width and frame_height).
+
+    Video Recording:
+        Initializes a VideoWriter object with the codec 'mp4v' to save the video feed to output.mp4 at 20 frames per second.
+
+    Live Capture and Display:
+        Continuously captures frames from the camera.
+        Writes each frame to the video file.
+        Displays the live video feed in a window titled "Camera."
+
+    Interactivity:
+        If the user presses the 't' key, it triggers the start_test() function from the imported test module.
+        If the 's' key is pressed, the program exits the loop.
+
+    Cleanup:
+        Releases the camera and video writer resources.
+        Closes the display window to ensure proper cleanup.
+
+This script combines live video recording, real-time display, and interactive functionality for custom testing.
+
+part 2: image processing
+
 1. Data Loading
 
 The code begins by importing the UTKFace dataset, which contains labeled facial images for tasks like age estimation.
