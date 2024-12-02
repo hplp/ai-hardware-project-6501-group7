@@ -99,21 +99,19 @@ Showcase of Neuromorphic Benefits
 
 ## Introduction
 
-The rapid advancements in artificial intelligence (AI) and machine learning (ML) have enabled significant progress in computer vision, particularly in tasks involving facial analysis. Age estimation from facial images is one such task that has found applications in diverse fields such as security, healthcare, retail, and entertainment. Accurate age prediction models can support applications like targeted marketing, age-appropriate content recommendation, and assistive technologies in healthcare for the early detection of age-related conditions. However, deploying such solutions at scale, particularly on edge devices, requires overcoming challenges related to computational efficiency, power consumption, and latency.
+The advancements in AI and machine learning have driven significant progress in computer vision, particularly in facial analysis tasks like age estimation. This task has diverse applications in security, healthcare, retail, and entertainment, enabling targeted marketing, age-specific content recommendations, and healthcare support for age-related conditions. However, scaling these solutions for edge devices presents challenges in computational efficiency, power consumption, and latency.
 
-Neuromorphic computing has emerged as a promising paradigm for addressing these challenges. By mimicking the human brain's energy-efficient processing mechanisms, neuromorphic architectures, such as BrainChip's Akida platform, offer a hardware solution that combines high performance with low power consumption. Unlike traditional neural networks that rely on synchronous, frame-based computation, the Akida architecture employs event-driven processing, wherein computations occur only in response to spikes or events. This event-based processing enables Akida models to operate efficiently in real-time, making them well-suited for edge applications.
+Neuromorphic computing, exemplified by BrainChip's Akida platform, offers a solution by mimicking the brain's energy-efficient, event-driven processing. Akida's architecture uses spiking neural networks (SNNs) to enable real-time, low-power operations, making it ideal for edge applications.
 
-This project aims to explore the potential of Akida's neuromorphic computing platform for age prediction tasks. Specifically, it evaluates the performance of an age prediction model using the UTK Face dataset—a diverse benchmark dataset for facial analysis. The project involves the following steps:
+This project evaluates Akida's potential for age estimation using the UTKFace dataset. Key steps include:
 
-    Training and evaluating a traditional deep learning model, based on the VGG architecture, in its native TensorFlow/Keras form.
-    Quantizing the Keras model for optimized deployment without significant loss of accuracy.
-    Converting the quantized model into an Akida-compatible format using the CNN-to-SNN (cnn2snn) framework.
-    Comparing the performance of the Keras and Akida models in terms of Mean Absolute Error (MAE) and inference efficiency.
-    Testing both models on custom facial images to evaluate their generalization capabilities.
+    Training a VGG-based deep learning model in TensorFlow/Keras.
+    Quantizing the model to optimize for deployment.
+    Converting the quantized model to an Akida-compatible format with the CNN-to-SNN framework.
+    Comparing Keras and Akida models in terms of Mean Absolute Error (MAE) and inference efficiency.
+    Testing the models on custom images to assess generalization.
 
-The Akida architecture offers a unique approach to implementing Spiking Neural Networks (SNNs), which are inherently energy-efficient due to their sparse, asynchronous computation. The platform supports both native SNNs and the conversion of pre-trained deep learning models into spiking-compatible formats. This flexibility allows for seamless integration with existing AI workflows while unlocking the benefits of neuromorphic computing.
-
-By leveraging Akida's strengths, this project investigates the trade-offs between accuracy, efficiency, and practical deployment capabilities in resource-constrained environments. The findings aim to provide insights into how neuromorphic computing can complement traditional AI techniques, particularly for tasks like age prediction, where real-time performance and low-power consumption are critical.
+The Akida platform’s ability to convert traditional models into spiking formats allows for seamless integration into AI workflows, offering accuracy and efficiency in resource-constrained environments. The study highlights the potential of neuromorphic computing to complement traditional AI, addressing real-time performance and low-power needs for edge deployments.
 
 
 
@@ -121,15 +119,13 @@ By leveraging Akida's strengths, this project investigates the trade-offs betwee
 
 ## Background
 
-Age prediction using facial images is a challenging task due to the high variability in facial features caused by factors such as ethnicity, lifestyle, lighting conditions, and image quality. Deep learning models, particularly convolutional neural networks (CNNs), have been successful in learning the complex mappings between facial features and age labels. However, deploying such models on edge devices often requires balancing accuracy with computational efficiency and power consumption.
+Age prediction from facial images is challenging due to variability in features influenced by ethnicity, lifestyle, lighting, and image quality. While convolutional neural networks (CNNs) like VGGNet excel in capturing these complexities, deploying such models on edge devices demands a balance between accuracy, computational efficiency, and power consumption.
 
-The UTK Face dataset provides a robust foundation for developing age prediction models, as it contains a wide variety of facial images labeled with age, gender, and ethnicity. Pre-trained models like VGGNet have shown excellent performance on similar tasks, and quantization techniques can further optimize these models for deployment without significant loss of accuracy.
+The UTKFace dataset, with diverse facial images labeled by age, gender, and ethnicity, serves as a strong foundation for model development. This project evaluates a pre-trained VGG-based model in its native TensorFlow/Keras form as a baseline, followed by quantization and conversion into an Akida-compatible format using the CNN-to-SNN framework. Akida’s spike-based neuromorphic principles enable ultra-low-power operations with competitive accuracy.
 
-In this project, a pre-trained VGG-based model is first evaluated in its native TensorFlow/Keras form to establish a baseline performance. This model is then quantized and converted into an Akida-compatible format using the CNN-to-SNN (cnn2snn) framework. Akida models leverage spike-based neuromorphic principles, enabling ultra-low-power execution while maintaining competitive accuracy. This study aims to highlight the trade-offs in accuracy and efficiency between traditional deep learning and neuromorphic approaches.
+The study compares the performance of Keras and Akida models in terms of mean absolute error (MAE) and generalization to unseen data. By also testing predictions on custom images, the project explores the practical viability of neuromorphic computing for real-world edge AI applications, emphasizing trade-offs between accuracy and efficiency.
 
-By assessing the performance of both the Keras and Akida models in terms of mean absolute error (MAE) and their ability to generalize to unseen data, this project aims to provide insights into the viability of neuromorphic computing for real-world edge AI applications. The additional evaluation of predictions on custom images further demonstrates the practical usability of these models in various scenarios.
-
-##Key Steps in the Code:
+##  Key Steps in the Code:
 
     Dataset Loading:
         load_data function loads the training and testing data (e.g., images and corresponding ages).
