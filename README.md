@@ -110,13 +110,30 @@ Alternatively, install dependencies from requirements.txt:
 
     pip install -r requirements.txt  
 
-Key Steps in the Code
+Step-by-Step Code Explanation
 
-    Dataset Loading: Load UTKFace dataset and preprocess images.
-    Model Evaluation: Test baseline, quantized, and Akida-converted models.
-    Age Prediction: Predict age from custom images using all models.
-    Optimization: Apply learning rate schedules and data augmentation.
-    Edge Deployment: Optimize for edge devices with quantization and pruning.
+    Load the UTKFace Dataset
+        The UTKFace dataset, containing 20,000+ facial images with age labels, is loaded using the load_data function.
+        Training and testing splits are prepared (x_train, y_train, x_test, y_test).
+        The test data is converted to uint8 format for compatibility with Akida models.
+
+    Load a Pre-Trained Native Keras Model
+        A pre-trained VGG-inspired model is downloaded and loaded.
+        The Keras model is compiled using the Mean Absolute Error (MAE) loss function to evaluate its performance.
+        The model's MAE is computed on the test dataset.
+
+    Load a Pre-Trained Quantized Keras Model
+        A quantized version of the VGG-inspired model is loaded. It uses 4-bit weights and activations, optimizing it for low-resource environments.
+        The quantized Keras model is evaluated on the test dataset to measure its MAE.
+
+    Convert Quantized Model to Akida Format
+        The quantized Keras model is converted into an Akida-compatible spiking neural network (SNN) using the cnn2snn.convert function.
+        The Akida model is evaluated using uint8 test data, and its MAE is computed and compared with the native Keras model's MAE.
+
+    Estimate Age on a Single Image
+        A sample image is selected, preprocessed, and passed to both the Keras and Akida models.
+        The predicted age values from both models are displayed alongside the actual age.
+        Recommendations are generated based on the Akida-predicted age using the get_recommendation function.
 
 Methodology
 
