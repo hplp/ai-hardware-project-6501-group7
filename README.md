@@ -164,7 +164,7 @@ MetaTF consists of four Python packages, leveraging the TensorFlow framework, wh
 
 2. Install the required MetaTF packages using pip:
 
-pip install akida==2.11.0
+```pip install akida==2.11.0
 pip install cnn2snn==2.11.0
 pip install akida-models==1.6.2
 
@@ -173,7 +173,7 @@ pip install akida-models==1.6.2
     Download the requirements.txt file.
     Run the following command in the folder containing the requirements.txt file:
 
-pip install -r requirements.txt
+    ```pip install -r requirements.txt
 
 ##  Key Steps in the Code:
 
