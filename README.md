@@ -125,8 +125,55 @@ The UTKFace dataset, with diverse facial images labeled by age, gender, and ethn
 
 The study compares the performance of Keras and Akida models in terms of mean absolute error (MAE) and generalization to unseen data. By also testing predictions on custom images, the project explores the practical viability of neuromorphic computing for real-world edge AI applications, emphasizing trade-offs between accuracy and efficiency.
 
+## How to Test the Code and Set Up the Akida Development Environment
 
+The Akida Development Environment is called **MetaTF**.
 
+MetaTF consists of four Python packages, leveraging the TensorFlow framework, which can be installed via pip from the PyPI repository.
+
+### MetaTF Packages
+
+1. **Model Zoo (`akida-models`)**:  
+   - Provides pre-trained, quantized models.
+   - Allows easy instantiation and training of Akida-compatible models.
+
+2. **Quantization Tool (`quantizeml`)**:  
+   - Enables quantization of CNN and Vision Transformer models.
+   - Uses low-bitwidth weights and outputs for optimized performance.
+
+3. **Conversion Tool (`cnn2snn`)**:  
+   - Converts models to a binary format for execution on the Akida platform.
+
+4. **Akida Neuromorphic Processor Interface (`akida`)**:  
+   - Includes runtime, Hardware Abstraction Layer (HAL), and a software backend.
+   - Simulates the Akida Neuromorphic Processor and supports the AKD1000 reference SoC.
+
+---
+
+### Installation
+
+#### Prerequisites
+- Python 3.11 or later.
+- It is recommended to use a virtual environment (e.g., Conda) for better dependency management.
+
+#### Setting Up the Environment
+1. Create and activate a virtual environment using Conda:
+   ```bash
+   conda create --name akida_env python=3.11
+   conda activate akida_env
+
+2. Install the required MetaTF packages using pip:
+
+pip install akida==2.11.0
+pip install cnn2snn==2.11.0
+pip install akida-models==1.6.2
+
+3. Alternatively, you can use the requirements.txt file provided in this repository:
+
+    Download the requirements.txt file.
+    Run the following command in the folder containing the requirements.txt file:
+
+pip install -r requirements.txt
 
 ##  Key Steps in the Code:
 
