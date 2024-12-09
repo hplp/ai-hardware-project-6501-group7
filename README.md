@@ -110,7 +110,43 @@ Alternatively, install dependencies from requirements.txt:
 
     pip install -r requirements.txt  
 
-Step-by-Step Code Explanation
+
+Step-by-Step Summary of the Code video.py:
+      The code starts from video.py where we use openCV to capture the picture of the tester. 
+      python video.py starts the code
+    Import Libraries and Setup
+        Import OpenCV (cv2) for camera operations and a custom module (predict) containing the start_test() function for processing.
+
+    Initialize the Camera
+        Open the default camera using cv2.VideoCapture(0).
+        Retrieve the default frame dimensions (width and height) using cv2.CAP_PROP_FRAME_WIDTH and cv2.CAP_PROP_FRAME_HEIGHT.
+
+    Setup Video Writer
+        Define the codec for video compression (mp4v) and initialize the cv2.VideoWriter object to save video frames to a file named output.mp4 with a frame rate of 20 FPS and the previously retrieved frame size.
+
+    Main Loop: Capture and Process Frames
+        Continuously read frames from the camera using cam.read().
+        If a frame fails to capture, exit the loop with an error message.
+
+    Write and Display Frames
+        Save each captured frame to the output.mp4 video file using out.write(frame).
+        Display the live feed in a window titled "Camera" using cv2.imshow().
+
+    Save a Frame as an Image
+        When the 't' key is pressed:
+            Save the current frame as img.png using cv2.imwrite().
+            Print a confirmation message.
+            Call the start_test() function to process the saved image.
+
+    Exit the Loop
+        When the 's' key is pressed, exit the loop and stop capturing frames.
+
+    Cleanup Resources
+        Release the camera and video writer objects with cam.release() and out.release().
+        Close all OpenCV windows using cv2.destroyAllWindows().
+
+        
+Step-by-Step Code Explanation of Predict.py
 
     Load the UTKFace Dataset
         The UTKFace dataset, containing 20,000+ facial images with age labels, is loaded using the load_data function.
