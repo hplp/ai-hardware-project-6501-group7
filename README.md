@@ -111,7 +111,8 @@ Alternatively, install dependencies from requirements.txt:
     pip install -r requirements.txt  
 
 
-Step-by-Step Summary of the Code video.py:
+### Step-by-Step Summary of the Code video.py:
+
       The code starts from video.py where we use openCV to capture the picture of the tester. 
       python video.py starts the code
     Import Libraries and Setup
@@ -146,7 +147,7 @@ Step-by-Step Summary of the Code video.py:
         Close all OpenCV windows using cv2.destroyAllWindows().
 
         
-Step-by-Step Code Explanation of Predict.py
+### Step-by-Step Code Explanation of Predict.py
 
     Load the UTKFace Dataset
         The UTKFace dataset, containing 20,000+ facial images with age labels, is loaded using the load_data function.
@@ -171,7 +172,7 @@ Step-by-Step Code Explanation of Predict.py
         The predicted age values from both models are displayed alongside the actual age.
         Recommendations are generated based on the Akida-predicted age using the get_recommendation function.
 
-Methodology
+### Methodology
 
     Video Capture: Real-time capture using OpenCV.
     Image Processing: Preprocess and load data for training.
@@ -179,7 +180,7 @@ Methodology
     Akida Conversion: Convert models for neuromorphic deployment.
     Testing: Evaluate on test images and custom inputs.
 
-Contributions
+### Contributions
 
     Implemented learning rate schedules for training optimization.
     Applied grid search for hyperparameter tuning.
@@ -187,13 +188,13 @@ Contributions
     Quantized models for edge deployment.
     Applied pruning for efficient edge device deployment.
 
-Benefits
+### Benefits
 
     Energy Efficiency: Neuromorphic inference with low power consumption.
     Scalability: Adaptable across datasets and industries.
     User Experience: Enhanced personalization through robust recommendations.
     
-Conclusion
+### Conclusion
 
 This project successfully demonstrated the development of an age-based recommendation system by leveraging the BrainChip Akida neuromorphic processor. Through a structured approach combining deep learning, quantization, neuromorphic computing, and efficient deployment techniques, we achieved several key objectives:
 
