@@ -162,8 +162,7 @@ MetaTF consists of four Python packages, leveraging the TensorFlow framework, wh
    conda create --name akida_env python=3.11
    conda activate akida_env
 
-2. Install the required MetaTF packages using pip:
-
+2. Install the required MetaTF packages using pip
 ```bash
 pip install akida==2.11.0
 pip install cnn2snn==2.11.0
